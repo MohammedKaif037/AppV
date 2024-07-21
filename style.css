@@ -1,0 +1,146 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Main container */
+.container {
+    max-width: 100%; /* Ensure the container takes full width of the viewport */
+    margin: 0 auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+}
+
+/* Left section for input */
+.input-section {
+    flex: 0 0 65%; /* Set width to 65% of the container */
+    min-width: 300px; /* Minimum width for better responsiveness */
+    margin-right: 20px; /* Space between input and output */
+}
+
+/* Right section for output */
+#output {
+    flex: 0 0 35%; /* Set width to 35% of the container */
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #e0f7fa; /* Light cyan */
+    border-left: 5px solid #26a69a; /* Teal border */
+    white-space: pre-wrap; /* Preserve whitespace */
+}
+
+/* Heading styles */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4A90E2; /* Vibrant blue */
+    font-size: 2.5rem;
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+/* Select and textarea styles */
+select, textarea, input[type="text"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+/* Hover effects for input fields */
+select:hover, textarea:hover, input[type="text"]:hover {
+    border-color: #4A90E2; /* Change border color on hover */
+}
+
+/* Button styles */
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4A90E2; /* Vibrant blue */
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #357ABD; /* Darker blue */
+    transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    form {
+        gap: 10px;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        flex-direction: column; /* Stack input and output vertically on small screens */
+    }
+
+    .input-section {
+        margin-right: 0; /* Remove right margin on small screens */
+        flex: 0 0 100%; /* Full width on small screens */
+    }
+
+    #output {
+        flex: 0 0 100%; /* Full width on small screens */
+        min-width: 100%;
+    }
+}
+
+/* Input section styles */
+#inputSection {
+    display: none;
+    margin-top: 20px;
+}
+
+#inputLabel {
+    font-weight: bold;
+}
+
+/* Animation for showing input section */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#inputSection.show {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
